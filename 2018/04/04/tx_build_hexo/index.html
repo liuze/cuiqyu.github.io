@@ -1,0 +1,131 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="像生于深海的鱼族，若不自燃，便只有漆黑一片"><title>使用hexo搭建个人博客并部署到github和腾讯云上 | 泛一叶扁舟等风来</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">使用hexo搭建个人博客并部署到github和腾讯云上</h1><a id="logo" href="/.">泛一叶扁舟等风来</a><p class="description">面朝大海，春暖花开。</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">使用hexo搭建个人博客并部署到github和腾讯云上</h1><div class="post-meta">Apr 4, 2018<span> | </span><span class="category"><a href="/categories/hexo/">hexo</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="post-content"><p><strong>前言：</strong> 作为一名程序员，都说我们这行是活到老学到老，你不进步就意味着被退步、被淘汰。所以我们要不断的去学习并掌握新技术，随着不断的学习知识积累的越来越多，就会发现有时候以前的一些知识点很有可能就忘记了，所以这时候我们就要学会做笔记（之前我一般都是使用的有道云，印象，百度云之类的）；但是后面我发现当我在网上找资料的时候都是大牛写的博客分享自己的知识，这种积累与分享<br>体现了我们代码界的开源精神，所以闲暇之余我也想搭建一个属于自己的博客，将一些平时所学的做个积累也可与小伙伴们做个探讨！可能语言组织能力有点差，如果有错误与写的不好的地方还请不要见怪，欢迎批评与指正！</p>
+<p>本篇博客主要讲述在腾讯云服务器上使用hexo搭建个人博客，并同时部署到github！我在网上也搜集了很多相关的博客介绍，在这里我将我如何搭建的做个总结，window上部署更为简单：<a href="https://wisemanjie.github.io/2018/03/22/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">利用github + hexo搭建个人博客</a>。</p>
+<blockquote>
+<p><strong>Hexo简介：</strong>Hexo(中文官方网站)是一个快速, 简洁且高效的博客框架. 让上百个页面在几秒内瞬间完成渲染. Hexo支持Github Flavored Markdown的所有功能, 甚至可以整合Octopress的大多数插件. 并自己也拥有强大的插件系统。</p>
+</blockquote>
+<h1 id="开始安装："><a href="#开始安装：" class="headerlink" title="开始安装："></a>开始安装：</h1><h3 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1. 安装node.js"></a>1. 安装node.js</h3><pre><code>使用apt-get安装nodejs：$ sudo apt-get install -y nodejs
+</code></pre><p>安装成功之后在命令行输入<code>node --version</code>如果显示版本号说明安装成功</p>
+<h3 id="2-安装npm"><a href="#2-安装npm" class="headerlink" title="2. 安装npm"></a>2. 安装npm</h3><pre><code>$ sudo apt-get install npm
+</code></pre><p>安装成功之后在命令行输入<code>npm --version</code>如果显示版本号说明安装成功</p>
+<h3 id="3-安装Git"><a href="#3-安装Git" class="headerlink" title="3. 安装Git"></a>3. 安装Git</h3><blockquote>
+<ul>
+<li>windows安装：直接写在 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git</a> 程序安装，一直点下一步即可。</li>
+<li>mac安装：使用(<a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a>、<a href="https://www.macports.org/" target="_blank" rel="noopener">MacPorts</a>：brew install git)或下载<a href="https://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="noopener">安装程序</a>安装。</li>
+<li>linux（Ubuntu、Debian）安装：<code>sudo apt-get install git-core</code></li>
+<li>linux（Fedora、Red Hat、CentOS）安装：<code>sudo yum install git-core</code></li>
+</ul>
+</blockquote>
+<p>安装成功之后：在命令行输入<code>git --version</code>如果出现<code>git version 1.8.3.1</code>表示安装成功！</p>
+<h3 id="4-安装nginx：用于静态博客的托管"><a href="#4-安装nginx：用于静态博客的托管" class="headerlink" title="4. 安装nginx：用于静态博客的托管"></a>4. 安装nginx：用于静态博客的托管</h3><ol>
+<li>自动安装 Nginx。输入命令：<code>yum install nginx</code></li>
+<li>启动 Nginx 服务。输入命令：<code>service nginx restart</code></li>
+<li><p>命令行测试 Nginx 服务是否正常运行，输入命令：<code>wget http://127.0.0.1</code>，若服务正常，则显示结果如下：</p>
+<pre><code>--2018-04-06 16:27:05--  http://127.0.0.1/
+Connecting to 127.0.0.1:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 6516 (6.4K) [text/html]
+Saving to: ‘index.html.3’
+100%[==================================================================&gt;] 6,516   --.-K/s   in 0s  
+2018-04-06 16:27:05 (773 MB/s) - ‘index.html.3’ saved [6516/6516]
+</code></pre></li>
+<li><p>浏览器中测试 Nginx 服务是否正常运行，访问 CentOS 云服务器公网 IP，若服务正常，则显示结果如下：</p>
+<p> <img src="https://i.imgur.com/ucNMEjt.png" alt=""></p>
+</li>
+</ol>
+<h3 id="5-本地Hexo安装与初始化"><a href="#5-本地Hexo安装与初始化" class="headerlink" title="5. 本地Hexo安装与初始化"></a>5. 本地Hexo安装与初始化</h3><h5 id="1-我们使用-Node-js-的包管理器-npm-安装-hexo-cli-和-hexo-server"><a href="#1-我们使用-Node-js-的包管理器-npm-安装-hexo-cli-和-hexo-server" class="headerlink" title="1. 我们使用 Node.js 的包管理器 npm 安装 hexo-cli 和 hexo-server"></a>1. 我们使用 Node.js 的包管理器 npm 安装 hexo-cli 和 hexo-server</h5><pre><code>npm install hexo-cli hexo-server -g
+</code></pre><blockquote>
+<p>hexo-cli 是 Hexo 的命令行工具，可用于快速新建、发布、部署博客；hexo-server 是 Hexo 的内建服务器，可用于部署前的预览和测试。-g 选项，表示全局安装。</p>
+</blockquote>
+<p>安装成功之后在命令行输入<code>hexo --version</code>如果出现下面这种表示安装成功</p>
+<pre><code>hexo-cli: 1.1.0
+os: Linux 3.10.0-693.el7.x86_64 linux x64
+http_parser: 2.7.0
+node: 9.9.0
+v8: 6.2.414.46-node.22
+uv: 1.19.2
+zlib: 1.2.11
+ares: 1.13.0
+modules: 59
+nghttp2: 1.29.0
+napi: 2
+openssl: 1.0.2n
+icu: 60.2
+unicode: 10.0
+cldr: 32.0.1
+tz: 2017c
+</code></pre><p>接下来，我们创建一个文件夹在存放博客，使用<code>hexo init ~/hexo_blog</code>来为博客做一些初始化配置，如果后面不指定文件夹路径，则表示在当前文件夹下初始化，初始化之后的文件夹目录下有一下文件结构</p>
+<pre><code>-rw-r--r--   1 root root   2106 Apr  5 11:36 _config.yml
+drwxr-xr-x 401 root root  12288 Apr  5 17:30 node_modules
+-rw-r--r--   1 root root553 Apr  5 17:30 package.json
+-rw-r--r--   1 root root 154096 Apr  5 17:30 package-lock.json
+drwxr-xr-x   2 root root   4096 Apr  5 16:28 scaffolds
+drwxr-xr-x   3 root root   4096 Apr  5 16:28 source
+drwxr-xr-x   4 root root   4096 Apr  5 16:53 themes
+</code></pre><h5 id="2-腾讯云服务器的配置"><a href="#2-腾讯云服务器的配置" class="headerlink" title="2. 腾讯云服务器的配置"></a>2. 腾讯云服务器的配置</h5><ol>
+<li><p>新建私有git仓库：创建一个名为 hexo_static 的裸仓库（bare repo）</p>
+<pre><code>sudo mkdir /var/repo/                    #### 如果没该目录则更换目录或手工创建一个
+sudo chown -R $USER:$USER /var/repo/    #### 修改目录的所有权和用户权限
+sudo chmod -R 755 /var/repo/            #### 赋予该目录的权限
+
+cd /var/repo/                            #### 进入该目录
+git init --bare hexo_static.git            #### git初始化
+</code></pre></li>
+</ol>
+<ol start="2">
+<li><p>配置nginx托管目录</p>
+<pre><code>sudo mkdir -p /var/www/hexo             #### 创建该目录，用户nginx托管
+sudo chown -R $USER:$USER /var/www/hexo    #### 修改目录的所有权和用户权限
+sudo chmod -R 755 /var/www/hexo            #### 赋予该目录的权限
+</code></pre><p>修改nginx的默认配置：<code>vi /etc/nginx/nginx.conf</code></p>
+<pre><code>server {
+    listen       80 default_server;
+    listen       [::]:80 default_server;
+    server_name  _;
+    root         /usr/share/nginx/html;
+    # Load configuration files for the default server block.
+    include /etc/nginx/default.d/*.conf;        #### 需要修改的部分
+    location / {
+            root /var/www/hexo/;
+            index index.html index.htm;
+    }
+    location /limpid {
+        proxy_pass http://127.0.0.1:8080;
+        proxy_set_header   Host    $host;
+        proxy_set_header   X-Real-IP   $remote_addr;
+        proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+    }    
+</code></pre><p>重启nginx服务：<code>systemctl restart nginx</code>,此时你去访问你的服务器地址，应该是会报错的，应该目前的/var/www/hexo目录是空的。</p>
+</li>
+<li><p>创建git钩子</p>
+<p> 在上一步自动生成的hook目录下创建一个新的钩子文件（目的是在满足特定的条件时将静态的html文件传送到/var/www/hexo目录）</p>
+<pre><code>vim /var/repo/hexo_static.git/hooks/post-receive
+</code></pre><p> 在该文件中添加两行代码，指定 Git 的工作树（源代码）和 Git 目录（配置文件等）</p>
+<pre><code>#!/bin/bash
+git --work-tree=/var/www/hexo --git-dir=/var/repo/hexo_static.git checkout -f
+</code></pre><p> wq保存并退出文件，并然此文件变为可执行文件</p>
+<pre><code>chmod +x /var/repo/hexo_static.git/hooks/post-receive
+</code></pre><p> 到此，我们的服务器端的配置已基本结束。</p>
+</li>
+<li><p>通过git部署到相关服务器上</p>
+<p> 进入上面我们初始化的博客目录<code>~/hexo_blog</code>， 其中<code>_config.yml</code>为我们Hexo的主配置文件，在此你可以修改一下博客内容的相关配置<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="noopener">【参考】</a></p>
+<p> 修改<code>vi ~/hexo_blog/_config.yml</code>配置文件，在文件最后配置如下</p>
+<pre><code>deploy:
+  type: git
+  repository:
+    limpid: root@你服务器的ip地址:/var/repo/hexo_static
+    github: https://github.com/yourname/yourname.github.io.git            #### 如果有多个，则类似往下添加
+  branch: master
+</code></pre><p> 注意：如果你是第一次使用git并且需要发布到github上，则你需要配置github秘钥：</p>
+<pre><code>ssh-keygen -t rsa -C &quot;your&apos;s emaill address&quot;
+</code></pre><p> 输入保存路径后生成两个文件（<code>id_rsa</code>、<code>id_rsa.pub</code>），查看<code>id_rsa.pub</code>拷贝全部内容，进入你个人github的点击个人头像下拉后选择<code>setting</code>目录，进入后选择左侧树菜单的<code>SSH and GPG keys</code>，新建一个<code>SSH key</code>，title随便填写一个，可以就粘贴刚刚复制的内容，点击<code>Add SSH key</code>，至此你的github秘钥已配置好。</p>
+<p> 新建博客：我一般是markdown【<a href="链接：https://pan.baidu.com/s/12FY073QWmNG-q5X8o2_xJQ">百度云盘：密码</a>eeco】上编写好文件之后，在上传到服务的<code>~/hexo_blog/source/_posts</code></p>
+<pre><code>一些常用命令：
+hexo clean &amp;&amp; hexo g        #### 清空并重新生成
+hexo d                         #### 发布到相关部署中：如github、腾讯云、gitee等
+hexo s                        #### 发布本地hexo服务，通过127.0.0.1::4000访问
+</code></pre><p> 新建博客并如上上传到服务器之后，通过命令<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d部</code>署到我们配置的服务器与github上，期间会让我们输入服务器密码与github的账户名密码，输入后等待片刻即部署成功！</p>
+<p> 自此，我们的博客已经搭建成功并成功部署到腾讯云与github中，访问 <code>服务器ip地址</code>，<code>yourname.github.io</code>看到的应该是相同的界面，也就是属于你的<code>blog</code>。此后可以通过<code>markdown</code>编写博客放入服务器后通过上面命令生成发布并部署。</p>
+<p> <a href="https://hexo.io/themes/" target="_blank" rel="noopener">你也可以更换你的博客主题！</a></p>
+</li>
+</ol>
+</div><iframe src="/donate/?AliPayQR=/img/AliPayQR.png&amp;WeChatQR=/img/WeChatQR.png&amp;GitHub=https://github.com/cuiqyu&amp;BTCQR=null&amp;BTCKEY=null&amp;PayPal=null" style="overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><div class="tags"><a href="/tags/腾讯云/">腾讯云</a><a href="/tags/github/">github</a></div><div class="post-nav"><a class="pre" href="/2018/04/06/java_io_base_operate/">java流的基本操作</a><a class="next" href="/2018/04/03/build_java_dev/">腾讯云搭建java开发环境</a></div></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://118.25.18.18"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/liunx/">liunx</a><span class="category-list-count">1</span></li></ul></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/腾讯云/" style="font-size: 15px;">腾讯云</a> <a href="/tags/io/" style="font-size: 15px;">io</a> <a href="/tags/github/" style="font-size: 15px;">github</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/06/java_io_base_operate/">java流的基本操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/04/tx_build_hexo/">使用hexo搭建个人博客并部署到github和腾讯云上</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/03/build_java_dev/">腾讯云搭建java开发环境</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://118.25.18.18/" title="limpid blog" target="_blank">limpid blog</a><ul></ul><a href="https://wisemanjie.github.io/" title="Jeremy blog" target="_blank">Jeremy blog</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">泛一叶扁舟等风来.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/cuiqyu"> limpid.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" color="100,99,98" opacity="0.6" zIndex="-1" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
