@@ -1,53 +1,40 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="像生于深海的鱼族，若不自燃，便只有漆黑一片"><title>Java进阶之路 | 泛一叶扁舟等风来</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Java进阶之路</h1><a id="logo" href="/.">泛一叶扁舟等风来</a><p class="description">面朝大海，春暖花开。</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Java进阶之路</h1><div class="post-meta">Apr 26, 2018<span> | </span><span class="category"><a href="/categories/java/">java</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="post-content"><p><strong>写在前面：</strong> 近段时间因为工作的原因，在考虑换一份工作；在面试几家后我自己的感觉就是知识很欠缺，很多知识点都不是很清楚，甚至于就完全不懂；我在想我也是快工作两年的程序员了，为什么我现在感觉都不如刚毕业的时候呢？我觉得是工作之后人变得懒惰了，变得社会了，开始选择安逸了，越来越没有上进心了，只是过着每天上班下班的生活，对未来依然一片茫然的。想想我觉得很可怕“我们不能再该奋斗的年代选择了安逸”。所以我准备开始我的java进阶之路了，想提高自己需要有方式方法，给自己定个目标。所以我从网上搜集整理了一些资料，初级程序员的进阶道路该怎么学。如有整理不妥当之处，还望大神指点，在此谢过了！</p>
-<h1 id="一、数据结构与算法"><a href="#一、数据结构与算法" class="headerlink" title="一、数据结构与算法"></a>一、数据结构与算法</h1><blockquote>
-<p>不管我们是用什么语言开发，都离不开数据结构与算法。</p>
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="像生于深海的鱼族，若不自燃，便只有漆黑一片"><title>Java进阶之路 | 泛一叶扁舟等风来</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Java进阶之路</h1><a id="logo" href="/.">泛一叶扁舟等风来</a><p class="description">面朝大海，春暖花开。</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Java进阶之路</h1><div class="post-meta">Apr 26, 2018<span> | </span><span class="category"><a href="/categories/java/">java</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="post-content"><blockquote>
+<p><strong>写在前面：</strong> 近段时间因为工作的原因，在考虑换一份工作；在面试几家后我自己的感觉就是知识很欠缺，很多知识点都不是很清楚，甚至于就完全不懂；我在想我也是快工作两年的程序员了，为什么我现在感觉都不如刚毕业的时候呢？我觉得是工作之后人变得懒惰了，变得社会了，开始选择安逸了，越来越没有上进心了，只是过着每天上班下班的生活，对未来依然一片茫然的。想想我觉得很可怕“我们不能再该奋斗的年代选择了安逸”。所以我准备开始我的java进阶之路了，想提高自己需要有方式方法，给自己定个目标。所以我从网上搜集整理了一些资料，初级程序员的进阶道路该怎么学。如有整理不妥当之处，还望大神指点，在此谢过了！</p>
 </blockquote>
+<h1 id="一、数据结构与算法"><a href="#一、数据结构与算法" class="headerlink" title="一、数据结构与算法"></a>一、数据结构与算法</h1><p>不管我们是用什么语言开发，都离不开数据结构与算法。</p>
 <ol>
 <li><strong>常用的数据结构：</strong></li>
 </ol>
-<pre><code>数组、链表、堆、栈、队列、Hash表、二叉树……
-</code></pre><ol start="2">
+<p>数组、链表、堆、栈、队列、Hash表、二叉树……</p>
+<ol start="2">
 <li><strong>算法的思想：</strong></li>
 </ol>
-<pre><code>算法的时间复杂度与空间复杂度的分析与计算
-
-
-
-**算法的八大思想：** 递推、递归、穷举、贪心、分治、动态规划、迭代、分支界限
-</code></pre><ol start="3">
+<p>算法的时间复杂度与空间复杂度的分析与计算</p>
+<p><strong>算法的八大思想：</strong> 递推、递归、穷举、贪心、分治、动态规划、迭代、分支界限</p>
+<ol start="3">
 <li><strong>经典算法：</strong></li>
 </ol>
-<pre><code>**八大排序算法：**
-
-直接插入排序、希尔排序、简单选择排序、堆排序、冒泡排序、快速排序、归并排序、基数排序
-
-
-
-**经典查找：**
-
-顺序查找、二分查找、二叉排序树查找
-</code></pre><ol start="4">
+<p><strong>八大排序算法：</strong><br>直接插入排序、希尔排序、简单选择排序、堆排序、冒泡排序、快速排序、归并排序、基数排序</p>
+<p><strong>经典查找：</strong><br>顺序查找、二分查找、二叉排序树查找</p>
+<ol start="4">
 <li><strong>高级数据结构：</strong></li>
 </ol>
-<pre><code>B+/B-树、红黑树、图……
-</code></pre><h1 id="二、java基础相关"><a href="#二、java基础相关" class="headerlink" title="二、java基础相关"></a>二、java基础相关</h1><blockquote>
+<p>B+/B-树、红黑树、图……</p>
+<h1 id="二、java基础相关"><a href="#二、java基础相关" class="headerlink" title="二、java基础相关"></a>二、java基础相关</h1><blockquote>
 <p>万丈高楼平地起，只要基础牢，才能走的更远更稳。</p>
 </blockquote>
 <ol>
 <li><strong>java的四大特性：</strong></li>
 </ol>
-<pre><code>抽象、封装、继承、多态
-</code></pre><ol start="2">
+<p>抽象、封装、继承、多态</p>
+<ol start="2">
 <li><strong>基础语法：</strong></li>
 </ol>
-<pre><code>java的语法格式、常量变量、变量的作用域、方法及方法的重载、运算符、程序流程控制、八大基本类型（byte、short、int、long、float、double、boolean、char）及对应的包装类（Byte、Short、Integer、Long、Float、Double、Boolean、Character）
-</code></pre><ol start="3">
+<p>java的语法格式、常量变量、变量的作用域、方法及方法的重载、运算符、程序流程控制、八大基本类型（byte、short、int、long、float、double、boolean、char）及对应的包装类（Byte、Short、Integer、Long、Float、Double、Boolean、Character）</p>
+<ol start="3">
 <li><strong>集合类：</strong></li>
 </ol>
-<pre><code>Collection以及各种List、Set、Queue、Map的实现以及集成关系，实现原理
-
-
-
-Collections和Arrays 
-</code></pre><p>………………不断更新中………………</p>
+<p>Collection以及各种List、Set、Queue、Map的实现以及集成关系，实现原理</p>
+<p>Collections和Arrays </p>
+<p>………………不断更新中………………</p>
 </div><iframe src="/donate/?AliPayQR=/img/AliPayQR.png&amp;WeChatQR=/img/WeChatQR.png&amp;GitHub=https://github.com/cuiqyu&amp;BTCQR=null&amp;BTCKEY=null&amp;PayPal=null" style="overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><div class="tags"><a href="/tags/java/">java</a></div><div class="post-nav"><a class="next" href="/2018/04/09/4_idea-shortcut-key/">Intellij开发效率提升</a></div></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://118.25.18.18"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/插件/">插件</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/插件/idea/">idea</a><span class="category-list-count">2</span></li></ul></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/Intellij/" style="font-size: 15px;">Intellij</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/26/5-Java_approach/">Java进阶之路</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/09/4_idea-shortcut-key/">Intellij开发效率提升</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/06/3_idea_install_scala/">Intellij安装scala插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/04/2_tx_build_hexo/">hexo的搭建与部署（github+腾讯云）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/03/1_txt_build_java_dev/">腾讯云搭建java开发环境</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://118.25.18.18/" title="limpid blog" target="_blank">limpid blog</a><ul></ul><a href="https://wisemanjie.github.io/" title="Jeremy blog" target="_blank">Jeremy blog</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">泛一叶扁舟等风来.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/cuiqyu"> limpid.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" color="100,99,98" opacity="0.6" zIndex="-1" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
